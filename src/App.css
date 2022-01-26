@@ -1,3 +1,103 @@
+*{box-sizing: border-box;}
+
+body {
+  width:100%;
+  height:100vh;
+  display: flex;
+  justify-content: center; /*wysrodkowanie w gore*/
+  align-items: center; /*wysrodkowanie w dół*/
+  font: 14px "Century Gothic", Futura, sans-serif;
+  margin: 20px;
+  background-color: #66ff99;
+}
+
+#gameboard{
+  background-color: #ffccff;
+  color: #00cc00;
+  text-transform: uppercase;
+  margin: 15px;
+  padding: 10 10 10 10;
+  border: 2px solid #00cc00;
+  border-radius: 7px;
+  box-shadow: 0 12px #ff99ff, 0 18px rgba(0,0,0,0.2);
+  font-size: 70px;
+  width: 90px;
+  height: 80px;
+  cursor: pointer;
+  position: relative;
+  top: 0;
+}
+
+button{
+  background-color: #ffccff;
+  border-radius: 5px;
+  height: auto;
+  width: 190px;
+}
+
+#gameboard:hover{
+  background-color: #ff99ff;
+  color: red;
+  top: 2px;
+  box-shadow: 0 8px #ff99ff, 0 16px rgba(0,0,0,0.2);
+}
+
+#gameboard:active{
+  top: 5px;
+  box-shadow: 0 4px #ff99ff, 0 8px rgba(0,0,0,0.2);
+
+}
+
+ol,
+ul {
+  padding-left: 30px;
+}
+
+.board{
+  counter-reset: row;
+  position: relative;
+  padding-left: 34px;
+  margin: auto;
+}
+.board-row:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.row-counters {
+  display: flex;
+  flex-flow: column-reverse nowrap;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.row-num {
+  width: 30px;
+  height: 110px;
+  font-size: 40px;
+  line-height: 120px;
+  padding: 0;
+  position: relative;
+  font-weight: bold;
+}
+.column-counters {
+  display: flex;
+}
+.column-num {
+  width: 120px;
+  height: 30px;
+  font-size: 40px;
+  line-height: 60px;
+  padding: 0;
+  text-align: center;
+  font-weight: bold;
+}
+
+.status {
+  margin-bottom: 10px;
+}
+
 .square {
   background: white;
   border: 1px solid gray;
@@ -17,31 +117,30 @@
   outline: none;
 }
 
-.board-row:after {
-  clear: both;
-  content: "";
-  display: table;
+.kbd-navigation .square:focus {
+  background: #ddd;
 }
 
 .game {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: row;
-  margin: 0 auto;
-}
-
-ul {
-  padding-left: 30px;
-  list-style-type: none;
+  flex-wrap: wrap;
 }
 
 .game-info {
-  margin-left: 20px;
+  margin: 15px;
+  position: relative;
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
 }
 
-.status {
-  margin-bottom: 10px;
+.bold {
+  font-weight: bold;
+}
+.bold button {
+  font-weight: bold;
+}
+#gameboard.gold {
+  background: gold;
 }
